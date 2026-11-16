@@ -33,7 +33,6 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: install
         run: |
-          if [ "$RUNNER_OS" = Windows ]; then export CC=gcc; fi
           python -m pip install -r requirements.txt
       - name: run on the test backend
         run: |

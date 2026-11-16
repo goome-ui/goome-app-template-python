@@ -59,7 +59,7 @@ It swaps "My Goome App" and friends for your name everywhere, files too, and lea
 <br>
 
 <p align="center">
-You need Python 3.8 or newer and a C compiler, pip builds the goome library for your computer the first time (a few seconds). On Debian/Ubuntu thats <code>sudo apt install build-essential</code>, on Mac <code>xcode-select --install</code>, on windows <a href="https://www.mingw-w64.org/">mingw-w64</a> gcc with <code>CC=gcc</code>.
+You need Python 3.8 or newer. goome comes from <a href="https://pypi.org/project/goome/">PyPI</a> with the library already built for windows, mac and linux x64. Anywhere else pip builds it from source, so youd need a C compiler then.
 </p>
 
 ```sh
@@ -70,7 +70,7 @@ python main.py
 ```
 
 <p align="center">
-<code>requirements.txt</code> pins goome to a tag of <a href="https://github.com/goome-ui/python-goome">python-goome</a>, change the tag on the end to update.
+<code>requirements.txt</code> pins goome to <code>0.5.0</code>, bump the number to update.
 </p>
 </details>
 
