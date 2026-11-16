@@ -9,6 +9,7 @@ class State(object):
     clicks = 0
     volume = 0.5
     overlay = False
+    shown = False
 
 
 def open_mode(overlay):
@@ -23,7 +24,9 @@ def open_mode(overlay):
 def contents(ui, s):
     s.overlay = ui.toggle("Overlay mode", s.overlay)
     ui.separator()
-    ui.heading("Hello from " + APP_NAME)
+    with ui.style(text=ui.anim_color("hello", 0xFFF2F4F8 if s.shown else 0x00F2F4F8, 600)):
+        ui.heading("Hello from " + APP_NAME)
+    s.shown = True
     if ui.button("Click me"):
         s.clicks += 1
     ui.label("clicked %d times" % s.clicks)
