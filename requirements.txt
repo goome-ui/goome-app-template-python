@@ -1,1 +1,1 @@
-goome @ git+https://github.com/goome-ui/python-goome@v0.5.0
+goome==0.5.0
