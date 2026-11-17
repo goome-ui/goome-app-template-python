@@ -70,7 +70,7 @@ python main.py
 ```
 
 <p align="center">
-<code>requirements.txt</code> pins goome to <code>0.5.2</code>, bump the number to update.
+<code>requirements.txt</code> pins goome to <code>0.5.3</code>, bump the number to update.
 </p>
 </details>
 
