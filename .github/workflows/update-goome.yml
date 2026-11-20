@@ -1,0 +1,31 @@
+name: update-goome
+
+on:
+  schedule:
+    - cron: '7 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-goome
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'goome-ui/goome-app-template-python'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.BOT_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN || github.token }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: bump goome
+        run: bash .github/update-goome.sh
